@@ -1,0 +1,21 @@
+<h1>ghostpost</h1>
+<a href='/addpost/'>Add New Post</a>
+<a href='/boasts/'>Boasts</a>
+<a href='/roasts/'>Roasts</a>
+<a href='/sortbyvotes/'>Sort By Votes</a>
+    {% for post in posts %}
+            <hr>
+            <h1>{{ post.content }}</h1>
+        {% if post.boast_roast == True %}
+            <h1>Boast</h1>
+        {% else %}
+            <h2>Roast</h2>
+        {% endif %}
+            <a href='/upvotes/{{ post.id }}'>upvotes</a>
+            <h2>{{ post.counter_of_votes }}</h2>
+            <a href='/downvotes/{{ post.id }}'>downvotes</a>
+            <h2>{{ downvote }}</h2>
+            <h1>{{ post.date }}</h1>
+            <br>   
+    {% endfor %}
+
